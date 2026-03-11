@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HomePage</class>
+ <widget class="QWidget" name="HomePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>760</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lblTitle">
+     <property name="text">
+      <string>首页 - 设备总览</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:18px;font-weight:600;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblDevices">
+       <property name="text">
+        <string>设备总数：-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblOnline">
+       <property name="text">
+        <string>在线设备：-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblAlarms">
+       <property name="text">
+        <string>最近告警：-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="spacerTopRight">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRefresh">
+       <property name="text">
+        <string>刷新</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <!-- 环境曲线（你之前做的 envChartHost 放这里） -->
+   <item>
+    <widget class="QGroupBox" name="grpEnvRealtime">
+     <property name="title">
+      <string>环境数据实时显示</string>
+     </property>
+     <layout class="QVBoxLayout" name="envChartLayout">
+      <item>
+       <widget class="QWidget" name="envChartHost">
+        <property name="minimumHeight">
+         <number>320</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   <!-- AI 卡片 -->
+   <item>
+    <widget class="QFrame" name="grpAi">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QFrame#grpAi{
+  border: 1px solid rgba(0,0,0,35);
+  border-radius: 10px;
+  background: rgba(255,255,255,92);
+}
+      </string>
+     </property>
+     <layout class="QVBoxLayout" name="aiLayout">
+      <item>
+       <layout class="QHBoxLayout" name="aiHeaderLayout">
+        <item>
+         <widget class="QLabel" name="lblAiTitle">
+          <property name="text">
+           <string>AI 环境分析（Qwen3.5-plus）</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size:14px;font-weight:600;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacerAiHeader">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAiAnalyze">
+          <property name="text">
+           <string>一键分析</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item>
+       <widget class="QTextBrowser" name="txtAiResult">
+        <property name="minimumHeight">
+         <number>150</number>
+        </property>
+        <property name="openExternalLinks">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p style="color:gray"&gt;点击“ 一键分析 ”，将最近温湿度数据与阈值发送给模型，并在此处展示结果。&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <spacer name="verticalSpacerBottom">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

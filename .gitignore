@@ -1,0 +1,6 @@
+build*/
+*.user
+*.user.*
+.DS_Store
+*.sqlite
+*.db
